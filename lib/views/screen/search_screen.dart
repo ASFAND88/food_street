@@ -27,14 +27,19 @@ class _searchScreenState extends State<searchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: appsColor.whiteColor,
       appBar: AppBar(
         backgroundColor: appsColor.whiteColor,
         elevation: 1.sp,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          size: 10.sp,
-          color: appsColor.blackColor,
+        leading: IconButton(
+          onPressed: (){
+            Navigator.pop(context);
+          },
+          icon:Icon(
+            Icons.arrow_back_ios,
+            size: 10.sp,
+            color: appsColor.blackColor,
+          ),
         ),
         centerTitle: true,
         title: Text(
