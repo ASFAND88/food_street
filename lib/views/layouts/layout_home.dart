@@ -307,9 +307,10 @@ class _LayoutHomeState extends State<LayoutHome> {
                   width: 100.h,
                   child: GridView(
                     scrollDirection: Axis.vertical,
+                    physics: NeverScrollableScrollPhysics(),
                     padding: EdgeInsets.all(10),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      mainAxisExtent: 24.h,
+                      mainAxisExtent: 22.h,
                       crossAxisCount: 2,
                       mainAxisSpacing: 15.sp,
                       crossAxisSpacing: 15.sp,
@@ -317,13 +318,6 @@ class _LayoutHomeState extends State<LayoutHome> {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                appsColor.whiteColor.withOpacity(0),
-                                appsColor.blackColor.withOpacity(0),
-                              ]),
                           borderRadius: BorderRadius.circular(10),
                           color: appsColor.greyColor,
                           image: DecorationImage(
@@ -331,53 +325,61 @@ class _LayoutHomeState extends State<LayoutHome> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Image.asset(
-                              'assets/images/dil.png',
-                            ).paddingOnly(left: 16.h,bottom: 13.h),
-                            Text(
-                              'Crispy Beef Burger',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w600,
-                                color: appsColor.whiteColor,
+                        child: Container(
+                          height: 50.h,
+                          width: 100.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  appsColor.whiteColor.withOpacity(0),
+                                  appsColor.blackColor.withOpacity(1),
+                                ]),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              CircleAvatar(
+                                radius:13,
+                                backgroundColor: appsColor.blackColor.withOpacity(0.3),
+                                child: SvgPicture.asset('assets/images/heart.svg',height: 3.w,),
+                              ).paddingOnly(bottom: 10.8.h,left: 15.3.h),
+                              Text(
+                                'Crispy Beef Burger',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: appsColor.whiteColor,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'by Jhon Jones',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.w400,
-                                color: appsColor.greyColor,
+                              Text(
+                                'by Jhon Jones',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: appsColor.greyColor,
+                                ),
                               ),
-                            ),
-                            RatingStars(
-                              value: rating,
-                              onValueChanged: (value) {
-                                setState(() {
-                                  rating = value;
-                                });
-                              },
-                              starSize: 11.sp,
-                              valueLabelVisibility: false,
-                            ),
-                          ],
-                        ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                              RatingStars(
+                                value: rating,
+                                onValueChanged: (value) {
+                                  setState(() {
+                                    rating = value;
+                                  });
+                                },
+                                starSize: 11.sp,
+                                valueLabelVisibility: false,
+                              ),
+                            ],
+                          ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                appsColor.whiteColor.withOpacity(0),
-                                appsColor.blackColor.withOpacity(0),
-                              ]),
                           borderRadius: BorderRadius.circular(10),
                           color: appsColor.greyColor,
                           image: DecorationImage(
@@ -385,54 +387,61 @@ class _LayoutHomeState extends State<LayoutHome> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(Icons.favorite,
-                              color: appsColor.greyColor,
-                              size: 10.sp,
-                            ).paddingOnly(left: 16.h,bottom: 13.h),
-                            Text(
-                              'Crispy Beef Burger',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w600,
-                                color: appsColor.whiteColor,
+                        child: Container(
+                          height: 50.h,
+                          width: 100.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  appsColor.whiteColor.withOpacity(0),
+                                  appsColor.blackColor.withOpacity(1),
+                                ]),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              CircleAvatar(
+                                radius:13,
+                                backgroundColor: appsColor.blackColor.withOpacity(0.3),
+                                child: SvgPicture.asset('assets/images/heart.svg',height: 3.w,),
+                              ).paddingOnly(bottom: 10.8.h,left: 15.3.h),
+                              Text(
+                                'Crispy Beef Burger',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: appsColor.whiteColor,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'by Jhon Jones',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.w400,
-                                color: appsColor.greyColor,
+                              Text(
+                                'by Jhon Jones',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: appsColor.greyColor,
+                                ),
                               ),
-                            ),
-                            RatingStars(
-                              value: rating,
-                              onValueChanged: (value) {
-                                setState(() {
-                                  rating = value;
-                                });
-                              },
-                              starSize: 11.sp,
-                              valueLabelVisibility: false,
-                            ),
-                          ],
-                        ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                              RatingStars(
+                                value: rating,
+                                onValueChanged: (value) {
+                                  setState(() {
+                                    rating = value;
+                                  });
+                                },
+                                starSize: 11.sp,
+                                valueLabelVisibility: false,
+                              ),
+                            ],
+                          ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                appsColor.whiteColor.withOpacity(0),
-                                appsColor.blackColor.withOpacity(0),
-                              ]),
                           borderRadius: BorderRadius.circular(10),
                           color: appsColor.greyColor,
                           image: DecorationImage(
@@ -440,54 +449,61 @@ class _LayoutHomeState extends State<LayoutHome> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(Icons.favorite,
-                              color: appsColor.greyColor,
-                              size: 10.sp,
-                            ).paddingOnly(left: 16.h,bottom: 13.h),
-                            Text(
-                              'Crispy Beef Burger',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w600,
-                                color: appsColor.whiteColor,
+                        child: Container(
+                          height: 50.h,
+                          width: 100.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  appsColor.whiteColor.withOpacity(0),
+                                  appsColor.blackColor.withOpacity(1),
+                                ]),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              CircleAvatar(
+                                radius:13,
+                                backgroundColor: appsColor.blackColor.withOpacity(0.3),
+                                child: SvgPicture.asset('assets/images/heart.svg',height: 3.w,),
+                              ).paddingOnly(bottom: 10.8.h,left: 15.3.h),
+                              Text(
+                                'Crispy Beef Burger',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: appsColor.whiteColor,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'by Jhon Jones',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.w400,
-                                color: appsColor.greyColor,
+                              Text(
+                                'by Jhon Jones',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: appsColor.greyColor,
+                                ),
                               ),
-                            ),
-                            RatingStars(
-                              value: rating,
-                              onValueChanged: (value) {
-                                setState(() {
-                                  rating = value;
-                                });
-                              },
-                              starSize: 11.sp,
-                              valueLabelVisibility: false,
-                            ),
-                          ],
-                        ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                              RatingStars(
+                                value: rating,
+                                onValueChanged: (value) {
+                                  setState(() {
+                                    rating = value;
+                                  });
+                                },
+                                starSize: 11.sp,
+                                valueLabelVisibility: false,
+                              ),
+                            ],
+                          ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                appsColor.whiteColor.withOpacity(0),
-                                appsColor.blackColor.withOpacity(0),
-                              ]),
                           borderRadius: BorderRadius.circular(10),
                           color: appsColor.greyColor,
                           image: DecorationImage(
@@ -495,54 +511,61 @@ class _LayoutHomeState extends State<LayoutHome> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(Icons.favorite,
-                              color: appsColor.greyColor,
-                              size: 10.sp,
-                            ).paddingOnly(left: 16.h,bottom: 13.h),
-                            Text(
-                              'Crispy Beef Burger',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w600,
-                                color: appsColor.whiteColor,
+                        child: Container(
+                          height: 50.h,
+                          width: 100.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  appsColor.whiteColor.withOpacity(0),
+                                  appsColor.blackColor.withOpacity(1),
+                                ]),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              CircleAvatar(
+                                radius:13,
+                                backgroundColor: appsColor.blackColor.withOpacity(0.3),
+                                child: SvgPicture.asset('assets/images/heart.svg',height: 3.w,),
+                              ).paddingOnly(bottom: 10.8.h,left: 15.3.h),
+                              Text(
+                                'Crispy Beef Burger',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: appsColor.whiteColor,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'by Jhon Jones',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.w400,
-                                color: appsColor.greyColor,
+                              Text(
+                                'by Jhon Jones',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: appsColor.greyColor,
+                                ),
                               ),
-                            ),
-                            RatingStars(
-                              value: rating,
-                              onValueChanged: (value) {
-                                setState(() {
-                                  rating = value;
-                                });
-                              },
-                              starSize: 11.sp,
-                              valueLabelVisibility: false,
-                            ),
-                          ],
-                        ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                              RatingStars(
+                                value: rating,
+                                onValueChanged: (value) {
+                                  setState(() {
+                                    rating = value;
+                                  });
+                                },
+                                starSize: 11.sp,
+                                valueLabelVisibility: false,
+                              ),
+                            ],
+                          ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                appsColor.whiteColor.withOpacity(0),
-                                appsColor.blackColor.withOpacity(0),
-                              ]),
                           borderRadius: BorderRadius.circular(10),
                           color: appsColor.greyColor,
                           image: DecorationImage(
@@ -550,54 +573,61 @@ class _LayoutHomeState extends State<LayoutHome> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(Icons.favorite,
-                              color: appsColor.greyColor,
-                              size: 10.sp,
-                            ).paddingOnly(left: 16.h,bottom: 13.h),
-                            Text(
-                              'Crispy Beef Burger',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w600,
-                                color: appsColor.whiteColor,
+                        child: Container(
+                          height: 50.h,
+                          width: 100.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  appsColor.whiteColor.withOpacity(0),
+                                  appsColor.blackColor.withOpacity(1),
+                                ]),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              CircleAvatar(
+                                radius:13,
+                                backgroundColor: appsColor.blackColor.withOpacity(0.3),
+                                child: SvgPicture.asset('assets/images/heart.svg',height: 3.w,),
+                              ).paddingOnly(bottom: 10.8.h,left: 15.3.h),
+                              Text(
+                                'Crispy Beef Burger',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: appsColor.whiteColor,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'by Jhon Jones',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.w400,
-                                color: appsColor.greyColor,
+                              Text(
+                                'by Jhon Jones',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: appsColor.greyColor,
+                                ),
                               ),
-                            ),
-                            RatingStars(
-                              value: rating,
-                              onValueChanged: (value) {
-                                setState(() {
-                                  rating = value;
-                                });
-                              },
-                              starSize: 11.sp,
-                              valueLabelVisibility: false,
-                            ),
-                          ],
-                        ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                              RatingStars(
+                                value: rating,
+                                onValueChanged: (value) {
+                                  setState(() {
+                                    rating = value;
+                                  });
+                                },
+                                starSize: 11.sp,
+                                valueLabelVisibility: false,
+                              ),
+                            ],
+                          ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                        ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                appsColor.whiteColor.withOpacity(0),
-                                appsColor.blackColor.withOpacity(0),
-                              ]),
                           borderRadius: BorderRadius.circular(10),
                           color: appsColor.greyColor,
                           image: DecorationImage(
@@ -605,44 +635,58 @@ class _LayoutHomeState extends State<LayoutHome> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Icon(Icons.favorite,
-                              color: appsColor.greyColor,
-                              size: 10.sp,
-                            ).paddingOnly(left: 16.h,bottom: 13.h),
-                            Text(
-                              'Crispy Beef Burger',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w600,
-                                color: appsColor.whiteColor,
+                        child: Container(
+                          height: 50.h,
+                          width: 100.h,
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [
+                                  appsColor.whiteColor.withOpacity(0),
+                                  appsColor.blackColor.withOpacity(1),
+                                ]),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              CircleAvatar(
+                                radius:13,
+                                backgroundColor: appsColor.blackColor.withOpacity(0.3),
+                                child: SvgPicture.asset('assets/images/heart.svg',height: 3.w,),
+                              ).paddingOnly(bottom: 10.8.h,left: 15.3.h),
+                              Text(
+                                'Crispy Beef Burger',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: appsColor.whiteColor,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'by Jhon Jones',
-                              style: TextStyle(
-                                fontFamily: 'poppins',
-                                fontSize: 8.sp,
-                                fontWeight: FontWeight.w400,
-                                color: appsColor.greyColor,
+                              Text(
+                                'by Jhon Jones',
+                                style: TextStyle(
+                                  fontFamily: 'poppins',
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: appsColor.greyColor,
+                                ),
                               ),
-                            ),
-                            RatingStars(
-                              value: rating,
-                              onValueChanged: (value) {
-                                setState(() {
-                                  rating = value;
-                                });
-                              },
-                              starSize: 11.sp,
-                              valueLabelVisibility: false,
-                            ),
-                          ],
-                        ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                              RatingStars(
+                                value: rating,
+                                onValueChanged: (value) {
+                                  setState(() {
+                                    rating = value;
+                                  });
+                                },
+                                starSize: 11.sp,
+                                valueLabelVisibility: false,
+                              ),
+                            ],
+                          ).paddingOnly(left: 10.sp, bottom: 10.sp),
+                        ),
                       ),
                     ],
                   ),

@@ -1,9 +1,9 @@
 import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:food_street/extensions/padding_extensions.dart';
 import 'package:food_street/helpers/constants.dart';
 import 'package:sizer/sizer.dart';
+import 'package:checkbox_grouped/checkbox_grouped.dart';
 
 class searchScreen extends StatefulWidget {
   @override
@@ -12,21 +12,23 @@ class searchScreen extends StatefulWidget {
 
 class _searchScreenState extends State<searchScreen> {
   int tag=1;
+  GroupController controller = GroupController();
+  List<String> value = [
+    'Chiken Recipe',
+    'Chiken Wings Recipe',
+    'Chiken Wings Recipe',
+    'Chiken Recipe',
+    'Chiken Wings Recipe',
+    'Chiken Wings Recipe',
+    'Chiken Wings Recipe',
+    'Chiken Recipe',
 
-  List<String> options = [
-    'Chiken Wings Recipe',
-    'Chiken Recipe',
-    'Chiken Wings Recipe',
-    'Chiken Recipe',
-    'Chiken Wings Recipe',
-    'Chiken Recipe',
-    'Chiken Wings Recipe',
-    'Chiken Recipe'
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: appsColor.whiteColor,
       appBar: AppBar(
         backgroundColor: appsColor.whiteColor,
@@ -128,25 +130,24 @@ class _searchScreenState extends State<searchScreen> {
                     Text('Suggested Recipe',
                       style: TextStyle(
                         fontFamily: 'poppins',
-                        fontSize: 8.sp,
+                        fontSize: 10.sp,
                         fontWeight: FontWeight.w500,
                         color: appsColor.blackColor,
                       ),
-                    ),
-                    ChipsChoice<int>.single(
-                      verticalDirection: VerticalDirection.down,
-                      placeholderStyle: TextStyle(
-                        fontFamily: 'poppins',
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12.sp,
-                        color: appsColor.iconColor,
-                      ),
-                      value: tag,
-                      onChanged: (value) => setState(() => tag = value),
-                      choiceItems: C2Choice.listFrom<int, String>(
-                        source: options,
-                        value: (i, v) => i,
-                        label: (i, v) => v,
+                    ).paddingOnly(bottom: 4.h,),
+                    SimpleGroupedChips(controller:GroupController(),
+                      values: [1,2,3,4,5,6,7,8,9],
+                      itemsTitle: value,
+                      chipGroupStyle: ChipGroupStyle.minimize(
+                        direction: ChipsDirection.wrap,
+                        selectedColorItem: appsColor.iconColor,
+                        backgroundColorItem: appsColor.iconColor,
+                        itemTitleStyle: TextStyle(
+                          fontFamily: 'poppins',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 8.sp,
+                        ),
+                        textColor: appsColor.whiteColor,
                       ),
                     ),
                   ],

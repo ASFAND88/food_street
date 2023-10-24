@@ -4,7 +4,8 @@ import 'package:food_street/extensions/padding_extensions.dart';
 import 'package:food_street/helpers/constants.dart';
 import 'package:food_street/views/screen/screen_notificationSetting.dart';
 import 'package:sizer/sizer.dart';
-class SettingScreen extends StatelessWidget{
+
+class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,18 +26,22 @@ class SettingScreen extends StatelessWidget{
           ),
         ),
         centerTitle: true,
-        title: Text('Setting',
+        title: Text(
+          'Setting',
           style: TextStyle(
             fontFamily: 'poppins',
             fontWeight: FontWeight.w500,
             fontSize: 10.sp,
             color: appsColor.blackColor,
-          ),),
+          ),
+        ),
       ),
       body: GestureDetector(
-        onTap: (){
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context)=>screenNotificationSetting()));
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => screenNotificationSetting()));
         },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 10),
@@ -49,7 +54,8 @@ class SettingScreen extends StatelessWidget{
             elevation: 3,
             child: Row(
               children: [
-                Text('Notification',
+                Text(
+                  'Notification',
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
                     fontSize: 10.sp,
@@ -58,7 +64,8 @@ class SettingScreen extends StatelessWidget{
                   ),
                 ).paddingOnly(left: 2.w),
                 Spacer(),
-                Icon(Icons.arrow_forward_ios,
+                Icon(
+                  Icons.arrow_forward_ios,
                   size: 14,
                 ),
               ],
@@ -68,5 +75,4 @@ class SettingScreen extends StatelessWidget{
       ),
     );
   }
-
 }

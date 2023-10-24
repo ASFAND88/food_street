@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_street/extensions/padding_extensions.dart';
 import 'package:food_street/helpers/constants.dart';
+import 'package:food_street/views/screen/screen_favoriterecipe.dart';
 import 'package:sizer/sizer.dart';
 class forgetScreen extends StatelessWidget{
   @override
@@ -65,21 +66,28 @@ class forgetScreen extends StatelessWidget{
         ),
             ),
           ).paddingOnly(top: 5.h),
-          Container(
-            padding: EdgeInsets.symmetric(
-                vertical: 7.sp, horizontal: 18.w),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(29),
-                color: appsColor.iconColor),
-            child: Text(
-              'Send',
-              style: TextStyle(
-                  fontFamily: 'poppins',
-                  fontWeight: FontWeight.w600,
-                  fontSize: 12.sp,
-                  color: appsColor.blackColor),
-            ),
-          ).paddingOnly(top: 8.h),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context,
+              MaterialPageRoute(builder: (context)=>favoriteRecipeScreen()),
+              );
+            },
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                  vertical: 7.sp, horizontal: 18.w),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(29),
+                  color: appsColor.iconColor),
+              child: Text(
+                'Send',
+                style: TextStyle(
+                    fontFamily: 'poppins',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 12.sp,
+                    color: appsColor.blackColor),
+              ),
+            ).paddingOnly(top: 8.h),
+          ),
         ],
       ).paddingSymmetric(horizontal: 15.w),
     );

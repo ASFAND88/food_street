@@ -37,14 +37,24 @@ class LayoutProfile extends StatelessWidget{
       body: Stack(
         children: [
           Positioned(
-            top: 18.h,
-            left: 16.h,
-            child: Container(
-              height: 100.sp,
-              width: 100.sp,
-              child: CircleAvatar(
-                radius: 6.w,
-                backgroundImage: AssetImage('assets/images/drawer.png'),
+            top: 25.h,
+            left: 8.h,
+            child: Material(
+              elevation: 1,
+              child: Container(
+                height: 220.sp,
+                width: 200.sp,
+                child: Column(
+                  children: [
+                    customTextField(hinttext: 'ABDUL HANNAN',
+                      label: 'Name',
+                      Iconyn: true,
+                    ).paddingOnly(top: 10.h),
+                    customTextField(hinttext: 'abc@gmail.com',
+                      label: 'Email',
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -76,21 +86,14 @@ class LayoutProfile extends StatelessWidget{
             ),
           ),
           Positioned(
-            top: 25.h,
-            left: 8.h,
+            top: 18.h,
+            left: 16.h,
             child: Container(
-              height: 220.sp,
-              width: 200.sp,
-              child: Column(
-                children: [
-                  customTextField(hinttext: 'ABDUL HANNAN',
-                  label: 'Name',
-                    Iconyn: true,
-                  ).paddingOnly(top: 10.h),
-                  customTextField(hinttext: 'abc@gmail.com',
-                  label: 'Email',
-                  ),
-                ],
+              height: 100.sp,
+              width: 100.sp,
+              child: CircleAvatar(
+                radius: 6.w,
+                backgroundImage: AssetImage('assets/images/drawer.png'),
               ),
             ),
           ),
